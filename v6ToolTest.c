@@ -366,6 +366,19 @@ int main(int argc, const char * argv[]) {
             printf("FAILED %s\n",testcase);
         }
     }
+    
+    //NAZEER GREENE
+    {
+        char *testDescription = "validIPv6Address";
+        char testcase[] = "2001:0db8:01234:5678:9abc:def:0123:4567";
+        printf("%s %s ",testDescription,testcase);
+        lowercase(testcase);
+        if (!validIPv6Address(testcase)) {
+            printf("SUCCESS %s\n",testcase);
+        } else {
+            printf("FAILED %s\n",testcase);
+        }
+    }
 
     return 0;
 }

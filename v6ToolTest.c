@@ -11,7 +11,7 @@
 #include "v6tools.h"
 
 int main(int argc, const char * argv[]) {
-    
+
     {
         char *testDescription = "stripNewline";
         char testcase[] = "ABCD\n";
@@ -209,6 +209,19 @@ int main(int argc, const char * argv[]) {
         }
     }
 
+    //NAZEER GREENE
+    {
+        char *testDescription = "validHextets";
+        char testcase[] = ":::::::1";
+        printf("%s %s ",testDescription,testcase);
+        lowercase(testcase);
+        if (validHextets(testcase)) {
+            printf("SUCCESS %s\n",testcase);
+        } else {
+            printf("FAILED %s\n",testcase);
+        }
+    }
+
     {
         char *testDescription = "validHextets";
         char testcase[] = "2001:0db8:0123:4567:89ab:cdef:0123:4567";
@@ -284,6 +297,19 @@ int main(int argc, const char * argv[]) {
     {
         char *testDescription = "validIPv6Address";
         char testcase[] = "2001:0db8:0123:4567:89ab:cdef:0123:4567";
+        printf("%s %s ",testDescription,testcase);
+        lowercase(testcase);
+        if (validIPv6Address(testcase)) {
+            printf("SUCCESS %s\n",testcase);
+        } else {
+            printf("FAILED %s\n",testcase);
+        }
+    }
+
+    //NAZEER GREENE
+    {
+        char *testDescription = "validIPv6Address";
+        char testcase[] = "2001:0db8:0123:4567:89ab:cdef::";
         printf("%s %s ",testDescription,testcase);
         lowercase(testcase);
         if (validIPv6Address(testcase)) {

@@ -11,7 +11,20 @@
 #include "v6tools.h"
 
 int main(int argc, const char * argv[]) {
-
+  /*
+    char test[100];
+    memset(test, 0, 50);
+    strcpy(test, "AAA::1::656:effe:deadbeef::1");
+    if (argc > 1)   strcpy(test, argv[1]);
+    printf("%s -->", test);
+    stripNewline(test);
+    lowercase(test);
+    printf(" %s : %s ", test, (validIPv6Characters(test) ? "Valid ": "Invalid"));
+    printf("(%lu bytes) IP address \n", strlen(test));
+    printf("double colons: %u\n", numberDoubleColons(test));
+    printf("total  colons: %u\n", numberOfColons(test));
+    printf("Only octets present: %s\n", (validHextets(test) ? "true" : "false"));
+*/
     {
         char *testDescription = "stripNewline";
         char testcase[] = "ABCD\n";
@@ -209,19 +222,6 @@ int main(int argc, const char * argv[]) {
         }
     }
 
-    //NAZEER GREENE
-    {
-        char *testDescription = "validHextets";
-        char testcase[] = ":::::::1";
-        printf("%s %s ",testDescription,testcase);
-        lowercase(testcase);
-        if (validHextets(testcase)) {
-            printf("SUCCESS %s\n",testcase);
-        } else {
-            printf("FAILED %s\n",testcase);
-        }
-    }
-
     {
         char *testDescription = "validHextets";
         char testcase[] = "2001:0db8:0123:4567:89ab:cdef:0123:4567";
@@ -305,19 +305,6 @@ int main(int argc, const char * argv[]) {
             printf("FAILED %s\n",testcase);
         }
     }
-
-    //NAZEER GREENE
-    {
-        char *testDescription = "validIPv6Address";
-        char testcase[] = "2001:0db8:0123:4567:89ab:cdef::";
-        printf("%s %s ",testDescription,testcase);
-        lowercase(testcase);
-        if (validIPv6Address(testcase)) {
-            printf("SUCCESS %s\n",testcase);
-        } else {
-            printf("FAILED %s\n",testcase);
-        }
-    }
     
     {
         char *testDescription = "validIPv6Address";
@@ -358,19 +345,6 @@ int main(int argc, const char * argv[]) {
     {
         char *testDescription = "validIPv6Address";
         char testcase[] = "2001:0db8:0123:4567:89ab:cdef:0123";
-        printf("%s %s ",testDescription,testcase);
-        lowercase(testcase);
-        if (!validIPv6Address(testcase)) {
-            printf("SUCCESS %s\n",testcase);
-        } else {
-            printf("FAILED %s\n",testcase);
-        }
-    }
-    
-    //NAZEER GREENE
-    {
-        char *testDescription = "validIPv6Address";
-        char testcase[] = "2001:0db8:01234:5678:9abc:def:0123:4567";
         printf("%s %s ",testDescription,testcase);
         lowercase(testcase);
         if (!validIPv6Address(testcase)) {

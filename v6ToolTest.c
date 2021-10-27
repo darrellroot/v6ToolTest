@@ -476,6 +476,19 @@ int main(int argc, const char * argv[]) {
             printf("FAILED %s\n",testcase);
         }
     }
+    
+    // Darrell
+    {
+        char *testDescription = "invalid 8 colons less than 39 char";
+        char testcase[] = "2001:db8:123:567:9ab:def:123:567:9ab";
+        printf("%s %s ",testDescription,testcase);
+        lowercase(testcase);
+        if (!validIPv6Address(testcase)) {
+            printf("SUCCESS %s\n",testcase);
+        } else {
+            printf("FAILED %s\n",testcase);
+        }
+    }
 
     return 0;
 }

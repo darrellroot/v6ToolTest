@@ -340,6 +340,34 @@ int main(int argc, const char * argv[]) {
             printf("FAILED %s\n",testcase);
         }
     }
+    
+    // new test case
+    //GEN ANDREUS L. SANTOS
+    {
+        char *testDescription = "validIPv6DoubleColons";
+        char testcase[] = "ffff:0:aaaa::1234";
+        printf("%s %s ",testDescription, testcase);
+        lowercase(testcase);
+        if (numberDoubleColons(testcase) == 0) {
+            printf("SUCCESS %s\n",testcase);
+        } else {
+            printf("FAILED %s\n",testcase);
+        }
+    }
+    
+    //new test case
+    //GEN ANDREUS L. SANTOS
+    {
+        char *testDescription = "stripNewline";
+        char testcase[] = "ADDGHello";
+        printf("%s %s ",testDescription,testcase);
+        stripNewline(testcase);
+        if (0 == strcmp(testcase, "")) {
+            printf("SUCCESS %s\n",testcase);
+        } else {
+            printf("FAILED %s\n",testcase);
+        }
+    }
 
     return 0;
 }
